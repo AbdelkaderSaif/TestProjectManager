@@ -1,0 +1,58 @@
+<h1 mat-dialog-title>Add Project</h1>
+<div mat-dialog-content>
+    <form class="example-form" [formGroup]="projectForm">   
+        <table class="example-full-width" cellspacing="0"><tr>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Project Name</mat-label>
+            <input formControlName="projectName" matInput>
+          </mat-form-field></td>
+          <td>
+            <button mat-stroked-button color="primary" type="button"> + Add new Task</button>
+          </td>
+        </tr></table>
+
+        <table class="example-full-width" cellspacing="0"><tr>
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Task</mat-label>
+              <input formControlName="taskName" matInput placeholder="Enter task">
+            </mat-form-field></td>
+           
+          </tr></table>  
+          <table class="example-full-width" cellspacing="0"><tr>
+            <mat-form-field color="accent" appearance="fill">
+                <mat-label>Assignment Date</mat-label>
+                <input formControlName="dateAssignment" matInput [matDatepicker]="picker1">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+              </mat-form-field>
+              
+              <mat-form-field color="accent" appearance="fill">
+                <mat-label>Deposit Date</mat-label>
+                <input formControlName="dateDeposit" matInput [matDatepicker]="picker2">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2 color="primary"></mat-datepicker>
+              </mat-form-field>
+            </tr></table> 
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label> Comment </mat-label>
+            <textarea formControlName="comment" matInput></textarea>
+          </mat-form-field>
+      </form>
+<h4 class="text-primary mt-4">Tasks:</h4>
+<div style="overflow-y:auto; height: 100%;">
+    <div class="m-3">
+        <div class="p-2 shadown border">
+            <div class="card col-md-10 border-0"> hhhhhhhhh</div>
+            <button  class="btn btn-outline-primary col me-2">Edit</button>
+            <div class="btn btn-outline-danger col">Remove</div>
+
+        </div>
+    </div>
+</div>
+</div>
+<div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button style="margin-left:8px;" mat-raised-button color="primary" (click)="addProject()">Save</button>
+</div>
